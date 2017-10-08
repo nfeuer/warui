@@ -1,9 +1,35 @@
 ((PatternLock) => {document.addEventListener('DOMContentLoaded', () => {
   const AnimationCanvas = document.getElementById('animation-canvas');
   const AnimationCanvasContext = AnimationCanvas.getContext('2d');
-
+  var Sounds = {
+    "basic attack": document.createElement("audio"),
+    "super attack": document.createElement("audio"),
+    "shield":document.createElement("audio")
+  };
   const AttackInterval = 2500;
   window.SiezeAttack = false;
+  // window.t = Sounds;
+  for(let key in Sounds) {
+    let source = "../audiosrc/";
+    if(key === "basic attack"){
+      source+= "basicAttack.mp3";
+    }
+    else if(key === "super attack"){
+      source += "superAttack.mp3";
+    }
+    else{source += "shield.mp3";}
+    Sounds[key].src = source;
+    Sounds[key].setAttribute("preload", "auto");
+    Sounds[key].setAttribute("controls", "none");
+    Sounds[key].style.display = "none";
+    document.body.appendChild(Sounds[key]);
+    Sounds[key].playSound = function(){
+        Sounds[key].play();
+    }
+    Sounds[key].stop = function(){
+        Sounds[key].pause();
+    }
+  }
 
   const Canvases = {
     animation: {
@@ -90,14 +116,17 @@
 
         switch (spellName) {
           case 'shield':
+            Sounds[spellName].playSound();
             startShieldAnimation();
             break;
 
           case 'super attack':
+            Sounds[spellName].playSound();
             superAttackAnimation();
             break;
 
           case 'basic attack':
+            Sounds[spellName].playSound();
             SimpleAttackDrawCircle(randNumInRange(50, 100));
             break;
         }
