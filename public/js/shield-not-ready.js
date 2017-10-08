@@ -100,22 +100,6 @@ function draw() {
       context.fillStyle = point.color;
       context.fill();
 
-      var rot = (frame*point.velocity*point.direction)/360;
-      var x = Math.cos(frame/25)*180 * Math.cos(rot) + 200;
-      var y = Math.sin(frame/25)*180 * Math.sin(rot) + 200;
-      context.beginPath(x, y);
-      context.arc(x, y, point.radius, 0, 2*Math.PI);
-      context.fillStyle = point.color;
-      context.fill();
-
-      var rot = (frame*point.velocity*point.direction)/360;
-      var x = Math.cos(frame/12.5)*180 * Math.cos(rot) + 200;
-      var y = Math.sin(frame/12.5)*180 * Math.sin(rot) + 200;
-      context.beginPath(x, y);
-      context.arc(x, y, point.radius, 0, 2*Math.PI);
-      context.fillStyle = point.color;
-      context.fill();
-
       context.fillStyle = "#fff";
    }
    frame++;
