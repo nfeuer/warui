@@ -37,7 +37,7 @@
 
 
 
-var partNum = 200,
+var partNum = 100,
     start = [400,400],
     frame = 0;
 
@@ -73,7 +73,7 @@ function Particle() {
 }
 
 function draw() {
-   if (AnimationStop === true) {
+   if (window.SiezeAttack === true || AnimationStop === true) {
      context.clearRect(0, 0, c.width, c.height, "#000");
      return;
    }

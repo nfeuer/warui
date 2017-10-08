@@ -167,7 +167,7 @@ Particle.prototype.update = function () {
 };
 
 function superAttackAnimation() {
-    if (AnimationStop === true) {
+    if (window.SiezeAttack === true || AnimationStop === true) {
       ctx.clearRect(0, 0, canvas.width, canvas.height, "#000");
       return;
     }
