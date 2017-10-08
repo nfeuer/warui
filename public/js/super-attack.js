@@ -159,7 +159,7 @@ Particle.prototype.update = function () {
     if (this.z > -focalLength) {
         var scale = focalLength / (focalLength + this.z);
 
-        this.size = scale * 4;
+        this.size = scale * 2;
         this.xPos = vanishPointX + this.x * scale;
         this.yPos = vanishPointY + this.y * scale;
         this.render = true;
