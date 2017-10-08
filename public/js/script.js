@@ -1,8 +1,8 @@
 ((PatternLock) => {
 	document.addEventListener('DOMContentLoaded', () => {
 		const cnvs = document.getElementById('animation-canvas');
-		cnvs.width = window.innerWidth;
-		cnvs.height = window.innerHeight;
+		cnvs.width = (window.innerWidth < 768) ? window.innerWidth : window.innerWidth / 2;
+		cnvs.height = window.innerHeight / 2;
 
 		const patternLock = new PatternLock({
 			el: '#spell-grid',

@@ -27,10 +27,23 @@
          }
          #spell-generator-container > #spell-grid {
             z-index: 1;
+						bottom: 0;
+						left: 50%;
+						width: 50%;
+						height: 50%;
+						transform: translate(-50%, 0%);
          }
          #spell-generator-container > #animation-canvas {
             z-index: 0;
+						top: 0;
+						left: 0;
          }
+
+		@media only screen and (min-width: 320px) and (max-width: 767px) {
+			#spell-generator-container > #spell-grid {
+				width: 100%;
+			}
+		}
 	</style>
 
 	<script type="text/javascript">
